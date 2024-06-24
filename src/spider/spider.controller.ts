@@ -14,7 +14,6 @@ export class SpiderController {
 
   @Get()
   async findSpiderListPage() {
-    console.log("111111")
     return await this.spiderService.findSpiderListPage();
   }
 
