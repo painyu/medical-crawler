@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("postgres://default:3gxtL6uklYAO@ep-raspy-lab-a4hs0yal.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require&connection_limit=50&pool_timeout=100000")
+  url      = env("DATABASE_URL")
 }
 
 model SpiderWebsite {
