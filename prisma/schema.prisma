@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model SpiderWebsite {
+  id                 String   @id @default(cuid())
+  companyId          String   @unique @map("company_id")
+  companyUrl         String   @default("") @map("company_url")
+  companyName        String   @default("") @map("company_name")
+  companyAddress     String   @default("") @map("company_address")
+  businessScope      String   @default("") @map("business_scope")
+  scaleNum           String   @default("") @map("scale_num")
+  contactPerson      String   @default("") @map("contact_person")
+  position           String   @default("") @map("position")
+  website            String   @default("") @map("website")
+  companyEstablished String   @default("") @map("company_established")
+  product            String   @default("") @map("product")
+  keywords           String   @default("") @map("keywords")
+  createdTime        DateTime @default(now()) @map("created_time")
+  updateTime         DateTime @default(now()) @map("update_time")
+
+  @@map("spider_website")
+}
